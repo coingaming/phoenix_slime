@@ -20,8 +20,9 @@ defmodule PhoenixSlime.Mixfile do
 
   def deps do
     [
-      {:phoenix, "~> 1.4"},
-      {:phoenix_html, "~> 2.10"},
+      {:phoenix, "~> 1.4", override: true},
+      {:phoenix_html, "~> 2.13"},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:jason, "~> 1.0", optional: true},
       {:slime, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev},
@@ -31,10 +32,11 @@ defmodule PhoenixSlime.Mixfile do
 
   defp package do
     [
-      maintainers: ["Sean Callan", "Alexander Stanko"],
+      maintainers: ["Sean Callan", "Alexander Stanko", "Reio Piller"],
       files: ["lib", "priv", "mix.exs", "README*", "LICENSE*"],
       licenses: ["MIT"],
-      links: %{github: "https://github.com/slime-lang/phoenix_slime"}
+      links: %{github: "https://github.com/coingaming/phoenix_slime"},
+      organization: "coingaming"
     ]
   end
 end

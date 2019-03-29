@@ -17,11 +17,27 @@ defmodule PhoenixSlimeTest do
       )
 
     assert html ==
-             {:safe, [[["" | "<html><body>"], "" | "<h2>New Template</h2>"] | "</body></html>"]}
+             {:safe, ["<html><body>", ["<h2>New Template</h2>"], "</body></html>"]}
   end
 
   test "render a slime template without layout" do
     html = View.render(MyApp.PageView, "new.html", [])
-    assert html == {:safe, ["" | "<h2>New Template</h2>"]}
+    assert html == {:safe, ["<h2>New Template</h2>"]}
+  end
+
+  test "render a slime live template with layout" do
+    html =
+      View.render(MyApp.PageView, "new_live.html",
+        message: "hi",
+        layout: {MyApp.PageView, "application_live.html"}
+      )
+
+    assert html ==
+             {:safe, ["<html><body>", ["<h2>New Template</h2>"], "</body></html>"]}
+  end
+
+  test "render a slime live template without layout" do
+    html = View.render(MyApp.PageView, "new_live.html", [])
+    assert html == {:safe, ["<h2>New Template</h2>"]}
   end
 end

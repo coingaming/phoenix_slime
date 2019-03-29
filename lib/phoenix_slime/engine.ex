@@ -5,9 +5,18 @@ defmodule PhoenixSlime.Engine do
   Precompiles the String file_path into a function definition
   """
   def compile(path, _name) do
+    engine =
+      case Path.expand(path) do
+        ".lime" ->
+          Phoenix.LiveView.Engine
+
+        _ ->
+          Phoenix.HTML.Engine
+      end
+
     path
     |> read!
-    |> EEx.compile_string(engine: Phoenix.HTML.Engine, file: path, line: 1)
+    |> EEx.compile_string(engine: engine, file: path, line: 1)
   end
 
   defp read!(file_path) do
