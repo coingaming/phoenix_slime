@@ -6,7 +6,7 @@ defmodule PhoenixSlime.Engine do
   """
   def compile(path, _name) do
     engine =
-      case Path.expand(path) do
+      case Path.extname(path) do
         ".lime" ->
           Phoenix.LiveView.Engine
 
