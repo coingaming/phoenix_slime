@@ -22,7 +22,7 @@ defmodule PhoenixSlime.Mixfile do
     [
       {:phoenix, "~> 1.4", override: true},
       {:phoenix_html, "~> 2.13"},
-      {:phoenix_live_view, "~> 0.1"},
+      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:jason, "~> 1.0", optional: true},
       {:slime, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev},
