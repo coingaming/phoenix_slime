@@ -1,7 +1,7 @@
 defmodule PhoenixSlime.Mixfile do
   use Mix.Project
 
-  @version "0.12.0"
+  @version "0.13.1"
 
   def project do
     [
@@ -20,9 +20,8 @@ defmodule PhoenixSlime.Mixfile do
 
   def deps do
     [
-      {:phoenix, "~> 1.4", override: true},
+      {:phoenix, "~> 1.4"},
       {:phoenix_html, "~> 2.13"},
-      {:phoenix_live_view, github: "phoenixframework/phoenix_live_view"},
       {:jason, "~> 1.0", optional: true},
       {:slime, "~> 1.0"},
       {:ex_doc, ">= 0.0.0", only: :dev},

@@ -13,13 +13,14 @@
 
 ## Usage
 
-  1. Add `{:phoenix_slime, "~> 0.12.0"}` to your deps in `mix.exs`.
+  1. Add `{:phoenix_slime, "~> 0.13.1"}` to your deps in `mix.exs`.
   2. Add the following to your Phoenix `config/config.exs`:
 
 ```elixir
   config :phoenix, :template_engines,
     slim: PhoenixSlime.Engine,
-    slime: PhoenixSlime.Engine
+    slime: PhoenixSlime.Engine,
+    slimleex: PhoenixSlime.LiveViewEngine # If you want to use LiveView
 ```
 
 An example project can be found at [slime-lang/phoenix_slime_example][phoenix_slime_example].
